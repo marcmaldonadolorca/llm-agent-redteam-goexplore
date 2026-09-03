@@ -11,6 +11,8 @@ para conseguir que exfiltre un secreto marcado (`SECRET_MARKER`) sorteando un gu
 **Sin medalla. Rank final 4.043 de 4.251** (privateScore = 0 en todos los envíos), pese a
 rozar el bronce en el leaderboard público (**91,005 · puesto ~422 de 4.229, top 10,0%**).
 
+![Progresión pública vs. resultado privado](docs/redteam-publico-vs-privado.png)
+
 La causa no fue el ataque en sí, sino el diseño de la evaluación: el leaderboard público
 usa un guardián *optimal_public* documentado y auditable, y **todos los que reproducíamos
 esa técnica compartida puntuábamos alto ahí — y cero contra el guardián privado oculto**,
