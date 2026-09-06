@@ -8,7 +8,7 @@ para conseguir que exfiltre un secreto marcado (`SECRET_MARKER`) sorteando un gu
 
 ## Resultado — y la lección honesta
 
-**Sin medalla. Rank final 4.043 de 4.251** (privateScore = 0 en todos los envíos), pese a
+**Sin medalla. Rank final 3.985 de 4.186** (privateScore = 0 en todos los envíos), pese a
 rozar el bronce en el leaderboard público (**91,005 · puesto ~422 de 4.229, top 10,0%**).
 
 ![Progresión pública vs. resultado privado](docs/redteam-publico-vs-privado.png)
