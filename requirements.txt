@@ -1,0 +1,4 @@
+# Python >= 3.11 (required by aicomp-sdk 3.1.2, the version the competition gateway used).
+# The SDK ships the scorer, predicates, guardrails and the local evaluation harness;
+# it pulls in torch, transformers, openai and gymnasium.
+aicomp-sdk==3.1.2

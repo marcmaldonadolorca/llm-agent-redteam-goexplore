@@ -16,25 +16,25 @@ from aicomp_sdk.evaluation.ops import eval_attack, resolve_fixtures_dir  # noqa:
 from aicomp_sdk.scoring import score_attack, score_attack_raw  # noqa: E402
 
 
-def load_attack(msgs_per_finding: int, max_findings: int):
-    spec = importlib.util.spec_from_file_location("attack_mod", str(ROOT / "attack.py"))
+def load_attack(n_single: int, n_multi: int):
+    spec = importlib.util.spec_from_file_location("attack_mod", str(ROOT / "attacks" / "attack.py"))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
 
     class Small(mod.AttackAlgorithm):
         def __init__(self, config=None):
-            super().__init__({"msgs_per_finding": msgs_per_finding, "max_findings": max_findings})
+            super().__init__({"n_single": n_single, "n_multi": n_multi})
 
     return Small
 
 
 def main():
-    mpf = int(sys.argv[1]) if len(sys.argv) > 1 else 3
-    mf = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+    n_single = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+    n_multi = int(sys.argv[2]) if len(sys.argv) > 2 else 1
     budget = float(sys.argv[3]) if len(sys.argv) > 3 else 900.0
-    print(f"[cfg] msgs/finding={mpf} findings={mf} budget={budget}s  (LLM calls ~= {mpf*mf})")
+    print(f"[cfg] single-post={n_single} multi-post={n_multi} budget={budget}s")
 
-    AttackCls = load_attack(mpf, mf)
+    AttackCls = load_attack(n_single, n_multi)
     fixtures = resolve_fixtures_dir(None)
 
     t0 = time.monotonic()

@@ -20,7 +20,7 @@ rerun del gateway lo sobrescribe con las 4 filas reales `gpt_oss_public/private`
   falla → 900 mensajes garantizados dentro del budget.
 - Comandos para disparar (cuando el GATE abra):
   ```
-  KG=/home/ftpx100/work/active/kaggle-rogii/.venv/bin/kaggle
+  KG=kaggle
   cd submission/jed-attack-dense && $KG kernels push -p .        # Save Version
   # esperar status COMPLETE, luego (v = nº de versión que devuelva el push):
   $KG competitions submit -c ai-agent-security-multi-step-tool-attacks \
